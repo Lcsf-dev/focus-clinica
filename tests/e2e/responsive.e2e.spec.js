@@ -4,7 +4,7 @@ const VIEWPORTS = [
   { width: 360, columns: 1 },
   { width: 390, columns: 1 },
   { width: 768, columns: 2 },
-  { width: 1440, columns: 4 },
+  { width: 1440, columns: 12 },
 ];
 
 for (const { width, columns } of VIEWPORTS) {
@@ -47,7 +47,7 @@ for (const { width, columns } of VIEWPORTS) {
       await expect(image).toHaveJSProperty("complete", true);
       expect(await image.evaluate((element) => element.naturalWidth)).toBeGreaterThan(0);
       const currentSource = await image.evaluate((element) => element.currentSrc);
-      expect(currentSource).toContain(width <= 540 ? `${screen}-preview.png` : `${screen}.png`);
+      expect(currentSource).toContain(width <= 540 ? `${screen}-preview.png` : `${screen}-showcase.webp`);
     }
     await page.locator("#demo").scrollIntoViewIfNeeded();
     await page.screenshot({ path: `tmp/showcase-demo-${width}.png` });

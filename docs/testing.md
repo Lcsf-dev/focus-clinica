@@ -1,5 +1,20 @@
 # Testes e verificações
 
+## Composição com personagem e produto — 03/11/2026
+
+Ambiente local: Windows, Node.js 24.16.0 e Chromium do Playwright. Build Vite e 20 testes do pacote aprovados. As verificações E2E locais foram direcionadas aos comportamentos afetados; a suíte completa permanece no CI, em Chromium e Firefox.
+
+- Conferência em 360, 390, 768 e 1440 px: médico e produto carregados e enquadrados; sem overflow horizontal; textos e ações sem sobreposição com o personagem.
+- Galeria com altura estável ao trocar entre os quatro painéis em 390 e 1440 px; descrição e destaques coerentes com a seleção. Ampliação dos PNGs completos, tamanho original, Escape e retorno do foco preservados.
+- Menu, links de funcionalidades, setas, Home, End, FAQ, foco e abertura sem erros no console conferidos. Sem JavaScript, as quatro imagens e seus links permanecem acessíveis.
+- Movimento reduzido mostra estados finais; movimentos dos cartões têm uma única repetição; entradas são desobservadas após a primeira aparição. Teste específico confirma visibilidade ao falhar a configuração do observador.
+- WebP do médico com canal alfa validado, dimensões reservadas e seleção responsiva; as quatro capturas PNG originais permanecem sem alterações.
+
+Evidências: [desktop](evidence/experience-desktop.png), [celular](evidence/experience-mobile.png), [demonstração desktop](evidence/experience-demo-desktop.png) e [demonstração no celular](evidence/experience-demo-mobile.png). As capturas usam movimento reduzido para registrar o estado final.
+
+Limites: inspeção das capturas renderizadas no navegador, sem dispositivos físicos, leitor de tela ou medição quantitativa de desempenho. Mensagens de CSP do selo automático do Netlify são distintas dos erros da aplicação na conferência de produção.
+
+
 ## Apresentação do produto — 03/11/2026
 
 Ambiente local: Windows, Node.js 24.16.0 e Chromium do Playwright. O build usa Vite e as verificações do pacote usam Vitest. A suíte completa em Chromium e Firefox, incluindo testes da integração GitHub com respostas controladas, permanece obrigatória no workflow `CI`.
