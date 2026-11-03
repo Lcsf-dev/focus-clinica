@@ -2,7 +2,7 @@
 
 ## Produção
 
-A publicação principal é <https://landing-page-focus-clinica-lcsf.netlify.app/>. O Netlify acompanha `main`, executa `npm run build` e publica `dist/`, conforme `netlify.toml`. A URL canônica, os metadados Open Graph e Twitter e a imagem social usam esse endereço.
+A publicação principal é <https://focusclinica.netlify.app/>. O Netlify acompanha `main`, executa `npm run build` e publica `dist/`, conforme `netlify.toml`. A URL canônica, os metadados Open Graph e Twitter e a imagem social usam esse endereço.
 
 O sistema em <https://focus-clinica.netlify.app/> é uma aplicação externa. A landing page apenas oferece seu link de acesso.
 
@@ -25,6 +25,8 @@ Branch da tarefa criada a partir de `origin/develop` → PR para `develop` → c
 O Vite gera o HTML, CSS e JavaScript de produção e copia as imagens de `public/`. Documentação, testes, credenciais e arquivos temporários ficam fora do pacote. `netlify.toml` preserva a CSP, X-Content-Type-Options, Referrer-Policy e X-Frame-Options. A CSP permite a API pública do GitHub e os avatares no domínio esperado.
 
 ## Histórico de publicação
+
+Endereço anterior do GitHub Pages: <https://lcsf-dev.github.io/landing-page-focus-clinica/>. Os registros datados abaixo preservam os endereços usados nas respectivas publicações.
 
 | Data | Versão | Registro |
 | --- | --- | --- |
