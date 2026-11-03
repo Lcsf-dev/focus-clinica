@@ -40,8 +40,9 @@ test("supports arrows, wraparound, Home and End", async ({ page }) => {
 });
 
 test("feature links reveal and focus the corresponding panel", async ({ page }) => {
-  for (const screen of screens) {
-    await page.locator(`[data-demo-target="${screen}-tab"]`).click();
+  for (const link of await page.locator("[data-demo-target]").all()) {
+    const screen = (await link.getAttribute("data-demo-target")).replace(/-tab$/, "");
+    await link.click();
     await expect(page.locator(`#${screen}-tab`)).toHaveAttribute("aria-selected", "true");
     await expect(page.locator(`#${screen}-panel`)).toBeFocused();
     await expect(page).toHaveURL(new RegExp(`#${screen}-panel$`));

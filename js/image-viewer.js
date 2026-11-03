@@ -29,8 +29,8 @@ export function initializeImageViewer() {
       const image = link.querySelector("img");
       expandedImage.src = link.href;
       expandedImage.alt = image.alt;
-      expandedImage.width = image.getAttribute("width");
-      expandedImage.height = image.getAttribute("height");
+      expandedImage.width = image.dataset.originalWidth || image.getAttribute("width");
+      expandedImage.height = image.dataset.originalHeight || image.getAttribute("height");
       opener = link;
       setOriginalSize(false);
       dialog.showModal();
