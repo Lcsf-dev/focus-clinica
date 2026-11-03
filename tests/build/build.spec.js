@@ -86,6 +86,11 @@ function getUniqueIds(source) {
 }
 
 describe("public package", () => {
+  it("ships the license of the locally hosted Inter font", () => {
+    const license = readFileSync(join(DIST_DIR, "licenses/Inter.txt"), "utf8");
+    expect(license).toContain("SIL Open Font License");
+  });
+
   it.each(FORBIDDEN_PUBLIC_PATHS)("does not publish %s", (name) => {
     const filePath = join(DIST_DIR, name);
 

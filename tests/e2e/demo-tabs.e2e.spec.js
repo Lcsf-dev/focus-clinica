@@ -1,61 +1,55 @@
 import { test, expect } from "./fixtures.js";
 
-test.beforeEach(async ({ page }) => {
-  await page.goto("/");
-});
+const screens = ["dashboard", "appointments", "consultation-types", "settings"];
 
-test("selects the first tab by default", async ({ page }) => {
+test.beforeEach(async ({ page }) => { await page.goto("/"); });
+
+test("selects the overview and keeps the other panels hidden", async ({ page }) => {
   await expect(page.locator(".tabs")).toBeVisible();
-  await expect(page.locator("#presentation-tab")).toHaveAttribute(
-    "aria-selected",
-    "true",
-  );
-  await expect(page.locator("#login-tab")).toHaveAttribute(
-    "aria-selected",
-    "false",
-  );
-  await expect(page.locator("#presentation-panel")).toBeVisible();
-  await expect(page.locator("#login-panel")).toBeHidden();
+  await expect(page.getByRole("tab")).toHaveCount(4);
+  for (const screen of screens) {
+    const selected = screen === "dashboard";
+    await expect(page.locator(`#${screen}-tab`)).toHaveAttribute("aria-selected", String(selected));
+    await expect(page.locator(`#${screen}-panel`)).toBeVisible({ visible: selected });
+  }
 });
 
-test("switches panels on click", async ({ page }) => {
-  await page.locator("#login-tab").click();
-
-  await expect(page.locator("#login-tab")).toHaveAttribute(
-    "aria-selected",
-    "true",
-  );
-  await expect(page.locator("#presentation-tab")).toHaveAttribute(
-    "aria-selected",
-    "false",
-  );
-  await expect(page.locator("#login-panel")).toBeVisible();
-  await expect(page.locator("#presentation-panel")).toBeHidden();
+test("switches to each screenshot on click", async ({ page }) => {
+  for (const screen of screens) {
+    await page.locator(`#${screen}-tab`).click();
+    await expect(page.locator(`#${screen}-tab`)).toHaveAttribute("aria-selected", "true");
+    await expect(page.locator(`#${screen}-panel`)).toBeVisible();
+    await expect(page.locator(`#${screen}-panel [data-zoom]`)).toHaveAttribute("href", `/img/${screen}.png`);
+    await expect(page.locator('[role="tabpanel"]:visible')).toHaveCount(1);
+  }
 });
 
-test("supports keyboard navigation", async ({ page }) => {
-  const presentation = page.locator("#presentation-tab");
-  const login = page.locator("#login-tab");
-
-  await presentation.focus();
-
-  await page.keyboard.press("ArrowRight");
-  await expect(login).toHaveAttribute("aria-selected", "true");
-  await expect(login).toBeFocused();
-
-  await page.keyboard.press("ArrowRight");
-  await expect(presentation).toHaveAttribute("aria-selected", "true");
-  await expect(presentation).toBeFocused();
-
+test("supports arrows, wraparound, Home and End", async ({ page }) => {
+  await page.locator("#dashboard-tab").focus();
+  for (const screen of screens.slice(1).concat("dashboard")) {
+    await page.keyboard.press("ArrowRight");
+    await expect(page.locator(`#${screen}-tab`)).toBeFocused();
+    await expect(page.locator(`#${screen}-tab`)).toHaveAttribute("aria-selected", "true");
+  }
   await page.keyboard.press("ArrowLeft");
-  await expect(login).toHaveAttribute("aria-selected", "true");
-  await expect(login).toBeFocused();
-
+  await expect(page.locator("#settings-tab")).toBeFocused();
   await page.keyboard.press("Home");
-  await expect(presentation).toHaveAttribute("aria-selected", "true");
-  await expect(presentation).toBeFocused();
-
+  await expect(page.locator("#dashboard-tab")).toBeFocused();
   await page.keyboard.press("End");
-  await expect(login).toHaveAttribute("aria-selected", "true");
-  await expect(login).toBeFocused();
+  await expect(page.locator("#settings-tab")).toBeFocused();
+});
+
+test("feature links reveal and focus the corresponding panel", async ({ page }) => {
+  for (const screen of screens) {
+    await page.locator(`[data-demo-target="${screen}-tab"]`).click();
+    await expect(page.locator(`#${screen}-tab`)).toHaveAttribute("aria-selected", "true");
+    await expect(page.locator(`#${screen}-panel`)).toBeFocused();
+    await expect(page).toHaveURL(new RegExp(`#${screen}-panel$`));
+  }
+});
+
+test("opens a linked panel directly", async ({ page }) => {
+  await page.goto("/#settings-panel");
+  await expect(page.locator("#settings-panel")).toBeVisible();
+  await expect(page.locator("#settings-tab")).toHaveAttribute("aria-selected", "true");
 });

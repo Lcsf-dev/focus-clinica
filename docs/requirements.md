@@ -21,7 +21,7 @@ Apresentar profissionalmente o Focus Clínica, um sistema de gestão clínica, d
 
 - RD01: identidade visual do Focus Clínica, com verde, azul-petróleo e branco.
 - RD02: tipografia moderna e legível; apresentação minimalista, elegante e profissional.
-- RD03: wireframes de todas as seções e protótipo navegável no Figma.
+- RD03: composição em HTML/CSS com as capturas reais de visão geral, agendamentos, especialidades e configurações; manter o protótipo histórico como registro.
 - RD04: considerar computador, tablet e celular; conferir a implementação com a referência visual e registrar divergências.
 - RQ01: HTML semântico, CSS organizado e classes reutilizáveis.
 - RQ02: Flexbox/Grid e media queries conforme necessário, sem rolagem horizontal indevida.
@@ -54,4 +54,4 @@ A entrega é a landing page institucional. Não foram solicitados módulos compl
 
 Sem inventar depoimentos, métricas, clientes, capturas do produto ou funcionalidades não confirmadas.
 
-As oito partes institucionais estão implementadas. Resultados e limitações de verificação estão em [Testes](testing.md); a divergência visual para o Figma permanece em [Design](design.md). Integração técnica não equivale à aprovação final da equipe ou do produto.
+Preservar as oito partes institucionais e acrescentar perguntas frequentes sobre o público, recursos, demonstração e acesso ao sistema. Resultados e limitações de verificação estão em [Testes](testing.md); a divergência visual para o Figma permanece em [Design](design.md). Integração técnica não equivale à aprovação final da equipe ou do produto.

@@ -80,6 +80,20 @@ test.describe("mobile menu", () => {
     await expect(page.locator("#features")).toBeFocused();
   });
 
+  test("opens by keyboard and keeps the destination below the header", async ({ page }) => {
+    await page.goto("/");
+    const button = page.locator(".menu-button");
+    await button.focus();
+    await page.keyboard.press("Enter");
+    await page.keyboard.press("Tab");
+    await expect(page.locator('#navigation a[href="#about"]')).toBeFocused();
+    await expect(page.locator('#navigation a[href="https://focus-clinica.netlify.app/"]')).toBeVisible();
+    await page.keyboard.press("Enter");
+    await expect(page.locator("#about")).toBeFocused();
+    const headerBottom = await page.locator(".header").evaluate((element) => element.getBoundingClientRect().bottom);
+    await expect.poll(() => page.locator("#about").evaluate((element) => Math.round(element.getBoundingClientRect().top))).toBeGreaterThanOrEqual(headerBottom);
+  });
+
   test("resets when the viewport becomes desktop", async ({ page }) => {
     await page.goto("/");
 
