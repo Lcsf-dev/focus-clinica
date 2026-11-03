@@ -1,5 +1,19 @@
 # Testes e verificações
 
+## Apresentação do produto — 03/11/2026
+
+Ambiente local: Windows, Node.js 24.16.0 e Chromium do Playwright. O build usa Vite e as verificações do pacote usam Vitest. A suíte completa em Chromium e Firefox, incluindo testes da integração GitHub com respostas controladas, permanece obrigatória no workflow `CI`.
+
+- Conferência visual e testes em 360, 390, 768 e 1440 px: sem overflow horizontal; cabeçalho com até 85 px; grades responsivas; as quatro capturas carregadas e recortes móveis selecionados corretamente.
+- Abas por clique, setas, Home e End, links dos cartões para seus painéis e abertura por fragmento da URL. Corrigida a seleção ao mudar o fragmento sem recarregar a página.
+- Ampliação das quatro capturas completas; fechamento por botão, fundo e Escape; retorno do foco ao link. Em 390 px, o tamanho original permite rolagem e mantém a largura natural da imagem; o estado é reiniciado ao reabrir.
+- Menu com estados acessíveis, fechamento por Escape e navegação, e retorno do foco. FAQ operável com Enter e Espaço. Links de acesso e demonstração com destinos consistentes. Teste de abertura sem erros no console aprovado.
+- PNGs completos comparados por SHA-256 com os arquivos de origem: quatro arquivos idênticos. Referências locais, IDs acessíveis e arquivos do pacote conferidos pelos testes de build. Conteúdo revisado para descrições objetivas do produto.
+
+Evidências: [hero no computador](evidence/showcase-desktop.png), [hero no celular](evidence/showcase-mobile.png), [galeria no computador](evidence/showcase-demo-desktop.png) e [galeria no celular](evidence/showcase-demo-mobile.png). As capturas de layout usam a preferência por movimento reduzido para evitar registrar a transição de entrada.
+
+As verificações são de navegador automatizado e inspeção das capturas, sem dispositivos físicos, leitor de tela ou avaliação quantitativa de desempenho. O resultado do CI deve ser consultado na PR correspondente.
+
 ## Suíte atual (Vitest + Playwright)
 
 Os testes automatizados estão divididos em projetos do Vitest e em E2E com Playwright.

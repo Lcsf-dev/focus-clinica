@@ -2,34 +2,27 @@
 
 ## Produção
 
-| Plataforma | Endereço |
-| --- | --- |
-| GitHub Pages | <https://lcsf-dev.github.io/landing-page-focus-clinica/> |
-| Netlify | <https://landing-page-focus-clinica-lcsf.netlify.app/> |
+A publicação principal é <https://landing-page-focus-clinica-lcsf.netlify.app/>. O Netlify acompanha `main`, executa `npm run build` e publica `dist/`, conforme `netlify.toml`. A URL canônica, os metadados Open Graph e Twitter e a imagem social usam esse endereço.
 
-A versão validada em 29/10/2026 é `8b8ba58`, integrada pelos PRs #28 e #29. O [workflow de produção](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/runs/40945562687) passou com 26 testes em Node 22.23.4, gerou o pacote pelo `pretest` e publicou no Pages. Os dois endereços responderam HTTP 200 e serviram a versão atualizada, incluindo a correção do foco do link de salto.
-
-O [sistema de referência](https://focus-clinica.netlify.app/) é uma aplicação externa, distinta desta landing page. A última versão de produção deve ser conferida no [workflow da main](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/workflows/ci-pages.yml?query=branch%3Amain) e no histórico do Netlify.
+O sistema em <https://focus-clinica.netlify.app/> é uma aplicação externa. A landing page apenas oferece seu link de acesso.
 
 ## GitHub Actions
 
-O workflow `.github/workflows/ci-pages.yml` executa em PRs destinados a `develop` e `main`, pushes nessas branches e execuções manuais.
+O workflow `.github/workflows/ci.yml` valida PRs e pushes em `develop` e `main`, com Node.js 22 e ações fixadas por commit:
 
-- Node.js 22, ações fixadas por commit e `contents: read` na validação.
-- `npm test` gera `dist/` uma vez pelo `pretest`; o mesmo pacote é usado na publicação.
-- Upload e deploy somente na referência `refs/heads/main`, fora de PRs e após sucesso de `validate`.
-- `pages: write` e `id-token: write` restritos ao job de deploy.
-- Validações ultrapassadas do mesmo PR/branch de desenvolvimento são canceladas; execuções da `main` são serializadas.
+1. `npm ci`.
+2. `npm test` para os projetos unitário e de integração do Vitest.
+3. `npm run test:build` para gerar `dist/` e testar o pacote.
+4. Instalação dos navegadores Chromium e Firefox do Playwright.
+5. `npm run test:e2e` para a suíte nos dois navegadores.
 
-PRs e pushes em `develop` não publicam no GitHub Pages. Validações de push e PR têm grupos separados por verificarem o commit da branch e a integração do PR.
+O workflow atual não publica no GitHub Pages; seu endereço anterior e seus registros permanecem no histórico. A publicação no Netlify é automática após a integração em `main`. A conferência de uma entrega deve comparar o SHA de `main` com o commit do deploy publicado no Netlify, além de verificar brevemente a página pública.
 
-## Netlify e pacote público
+## Integração e pacote público
 
-`netlify.toml` define `npm run build`, publicação de `dist`, Node 22 e cabeçalhos CSP, X-Content-Type-Options, Referrer-Policy e X-Frame-Options. A CSP permite consultas ao GitHub e avatares no domínio esperado.
+Branch da tarefa criada a partir de `origin/develop` → PR para `develop` → checks → merge → PR para `main` → checks → merge. Não enviar diretamente às branches principais, reescrever histórico ou contornar proteções.
 
-A produção acompanha `main`. O Netlify também gerou uma [prévia do PR #29](https://deploy-preview-29--landing-page-focus-clinica-lcsf.netlify.app/); previews são separados de produção e controlados pelas configurações da plataforma. Não presumir que estejam desabilitados.
-
-O pacote contém HTML, CSS, JavaScript, imagens, fontes e a licença da Inter. Documentação, testes, configurações locais e histórico Git ficam fora. Caminhos relativos preservam a compatibilidade com o subdiretório do Pages. O Pages aplica os cabeçalhos da própria plataforma.
+O Vite gera o HTML, CSS e JavaScript de produção e copia as imagens de `public/`. Documentação, testes, credenciais e arquivos temporários ficam fora do pacote. `netlify.toml` preserva a CSP, X-Content-Type-Options, Referrer-Policy e X-Frame-Options. A CSP permite a API pública do GitHub e os avatares no domínio esperado.
 
 ## Histórico de publicação
 
