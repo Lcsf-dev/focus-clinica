@@ -1,14 +1,14 @@
 export function initializeMenu() {
   const button = document.querySelector(".menu-button");
   const navigation = document.querySelector("#navigation");
-  const mobileViewport = window.matchMedia("(max-width: 540px)");
+  const mobileViewport = window.matchMedia("(max-width: 1050px)");
   let isOpen = false;
 
   function setMenuOpen(shouldOpen) {
     isOpen = shouldOpen && mobileViewport.matches;
     button.setAttribute("aria-expanded", String(isOpen));
     button.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
-    button.querySelector("use").setAttribute("href", `img/icons.svg#${isOpen ? "close" : "menu"}`);
+    button.querySelector("use").setAttribute("href", `/img/icons.svg#${isOpen ? "close" : "menu"}`);
     navigation.classList.toggle("is-open", isOpen);
     navigation.inert = mobileViewport.matches && !isOpen;
     if (mobileViewport.matches) {
@@ -29,6 +29,8 @@ export function initializeMenu() {
     if (target) {
       target.tabIndex = -1;
       target.focus({ preventScroll: true });
+    } else {
+      button.focus({ preventScroll: true });
     }
   });
   document.addEventListener("keydown", (event) => {

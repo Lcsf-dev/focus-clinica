@@ -3,14 +3,36 @@ export function initializeImageViewer() {
   if (typeof dialog.showModal !== "function") return;
 
   const expandedImage = document.querySelector("#expanded-image");
+  const viewport = document.querySelector("#image-viewport");
+  const sizeButton = document.querySelector("#toggle-image-size");
+  let opener;
+
+  function setOriginalSize(original) {
+    viewport.classList.toggle("is-original", original);
+    sizeButton.setAttribute("aria-pressed", String(original));
+    sizeButton.textContent = original ? "Ajustar à tela" : "Ver em tamanho original";
+    viewport.scrollTo(0, 0);
+  }
+
+  sizeButton.addEventListener("click", () => {
+    setOriginalSize(sizeButton.getAttribute("aria-pressed") !== "true");
+  });
+  dialog.addEventListener("close", () => {
+    setOriginalSize(false);
+    opener?.focus({ preventScroll: true });
+  });
   document.querySelectorAll("[data-zoom]").forEach((link) => {
     link.addEventListener("click", (event) => {
-      // Preserve native navigation when a modifier key is pressed.
+      // Preserva a navegação nativa com teclas modificadoras.
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
       const image = link.querySelector("img");
       expandedImage.src = link.href;
       expandedImage.alt = image.alt;
+      expandedImage.width = image.getAttribute("width");
+      expandedImage.height = image.getAttribute("height");
+      opener = link;
+      setOriginalSize(false);
       dialog.showModal();
     });
   });

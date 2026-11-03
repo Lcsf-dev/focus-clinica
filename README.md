@@ -12,53 +12,71 @@ Landing page institucional para apresentar o Focus Clínica a clínicas, gestore
 
 ## Funcionalidades
 
-- Cabeçalho, hero, sobre, funcionalidades, benefícios, demonstração, chamada para ação e rodapé.
+- Cabeçalho, hero, sobre, funcionalidades, benefícios, demonstração, chamada para ação e rodapé, com perguntas frequentes antes da chamada final.
+- Galeria de visão geral, agendamentos, especialidades e configurações, com capturas reais e dados demonstrativos.
 - Menu responsivo, navegação por âncoras, abas por clique/teclado e ampliação das capturas.
 - Perfis públicos da equipe no rodapé, com nomes e links estáticos preservados se a API falhar.
 - Layout responsivo, foco visível e tratamento de preferência por movimento reduzido.
 
 ## Executar localmente
 
-Pré-requisitos: Node.js 22 ou superior e npm. Não há dependências de aplicação a instalar.
+Pré-requisitos: Node.js 22 atualizado (ou superior) e npm. A aplicação usa HTML, CSS e JavaScript com Vite para desenvolvimento e build, Vitest para testes unitários e de integração e Playwright para testes no navegador.
 
 ```powershell
+npm ci
 npm run dev
 ```
 
-Abra <http://127.0.0.1:5500>. Encerre com `Ctrl+C`. A página deve ser aberta por HTTP, para carregar os módulos ES.
+Abra o endereço informado pelo Vite, normalmente <http://localhost:5173>. Encerre com `Ctrl+C`.
 
 | Comando | Finalidade |
 | --- | --- |
-| `npm run dev` | Servir a página localmente |
-| `npm test` | Gerar `dist/` pelo `pretest` e executar a suíte com respostas controladas |
+| `npm run dev` | Iniciar o servidor de desenvolvimento |
 | `npm run build` | Gerar o pacote público em `dist/` |
+| `npm run preview` | Conferir o build, normalmente em <http://localhost:4173> |
+| `npm test` | Executar testes unitários e de integração com respostas controladas |
+| `npm run test:build` | Gerar o build e verificar referências e arquivos públicos |
+| `npx playwright install chromium firefox` | Preparar os navegadores para os testes E2E |
+| `npm run test:e2e` | Executar a suíte E2E em Chromium e Firefox |
+
+O E2E inicia o preview e gera o build quando não há servidor disponível. Para evitar builds duplicados na conferência local, reutilize um preview já iniciado após `npm run test:build`. No CI, preserve a sequência obrigatória do workflow.
 
 ## Estrutura
 
 ```text
 .
-├── .github/       # Workflows and contribution templates
-├── css/           # styles.css and fonts/
-├── docs/          # Project documentation and evidence/
-├── public/img/    # Real screenshots, logo and SVG icons
+├── .github/       # Workflows e modelos de contribuição
+├── css/           # Estilos e fonte Inter local com licença
+├── docs/          # Documentação técnica e evidências
+├── public/img/    # Capturas originais, recortes, marca e ícones
 ├── js/
-│   ├── github/    # HTTP client and profile validation
-│   ├── team/      # Profile loading and DOM presentation
+│   ├── api/       # Cliente e validação dos perfis do GitHub
+│   ├── team/      # Carregamento e apresentação dos integrantes
 │   ├── main.js
 │   ├── menu.js
 │   ├── demo-tabs.js
 │   ├── image-viewer.js
 │   └── reveal-animations.js
-├── pages/         # Reserved for additional pages
-├── scripts/       # build.mjs and dev-server.mjs
-├── tests/         # Node.js test suite
+├── tests/         # Testes unitários, integração, build e E2E
+├── utils/         # Utilitários compartilhados
 ├── index.html
+├── vite.config.js
+├── playwright.config.js
 ├── netlify.toml
-├── package.json
-└── README.md
+└── package.json
 ```
 
 `dist/` é gerado e ignorado pelo Git. Nomes técnicos usam inglês; interface e documentação da equipe usam português. Convenções e decisões estão em [Refatoração](docs/refactoring.md).
+
+## Demonstração e acessibilidade
+
+As quatro capturas completas ficam em `public/img/`, com seus PNGs originais preservados. Em telas pequenas, recortes de 600 × 500 px destacam uma região; a ampliação sempre abre a captura completa. No diálogo, “Ver em tamanho original” permite ler os detalhes com rolagem horizontal e vertical, inclusive por teclado. Escape fecha a imagem e devolve o foco ao elemento de abertura.
+
+As abas aceitam setas, Home e End. Os cartões de funcionalidades abrem o painel correspondente. A navegação permanece disponível sem JavaScript, com todas as capturas apresentadas em sequência. Nessa situação, a ampliação usa o link direto para o PNG.
+
+## Publicação
+
+O Netlify publica `dist/` a partir de `main`, usando `npm run build`. A integração segue branch da tarefa → PR para `develop` → checks → merge → PR para `main` → checks → merge. A URL canônica e a imagem social apontam para a publicação principal no Netlify. Consulte [CI/CD e publicação](docs/deployment.md).
 
 ## Integração com o GitHub
 

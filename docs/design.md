@@ -1,4 +1,18 @@
-# Design e protótipo — Focus Clínica
+# Design — Focus Clínica
+
+## Apresentação atual do produto
+
+A composição mantém a marca original e a paleta verde, petróleo, menta e branco. O hero apresenta a visão geral do sistema, o título “Mais organização. Mais foco no cuidado.” e os acessos à plataforma e à demonstração.
+
+As oito partes institucionais são preservadas, com perguntas frequentes antes da chamada final. Funcionalidades apontam para as quatro telas reais da galeria. Benefícios descrevem agendas, status, avisos, especialidades e preferências, sem métricas de resultados ou recursos adicionais.
+
+O cabeçalho usa uma linha com marca e menu em larguras de até 1050 px; o acesso ao sistema fica dentro da navegação. No celular, as quatro abas são organizadas em duas colunas e os recortes destacam regiões das capturas. A ampliação mostra o original completo e oferece tamanho natural para leitura dos detalhes.
+
+Títulos e ações são HTML selecionável. Bordas, sombras e estados de foco compartilham os mesmos tokens. A fonte Inter local e sua licença são mantidas. A origem das imagens está em [Recursos visuais](images.md).
+
+## Histórico do protótipo
+
+Os registros abaixo descrevem as versões anteriores e suas revisões específicas.
 
 **Revisão visual: Thamires (`thaamiresffranca`) — aprovado em 20/10/2026.**
 
