@@ -51,7 +51,7 @@
           <figure class="hero__visual">
             <div class="hero-stage">
               <div class="hero-stage__decoration" aria-hidden="true"><div class="hero-stage__orbit"></div></div>
-              <img class="hero-doctor" src="/img/doctor-hero.webp" srcset="/img/doctor-hero-small.webp 520w, /img/doctor-hero.webp 900w" sizes="(max-width: 540px) 82vw, (max-width: 1050px) 450px, 470px" alt="Médico fictício de jaleco branco, em imagem ilustrativa." width="900" height="1015" fetchpriority="high" data-reveal data-reveal-step="2">
+              <img class="hero-doctor" src="/img/doctor-hero.webp" srcset="/img/doctor-hero-small.webp 520w, /img/doctor-hero.webp 900w" sizes="(max-width: 540px) 82vw, (max-width: 1050px) 450px, 470px" alt="Homem de jaleco branco e camisa verde-petróleo, com os braços cruzados." width="900" height="1015" fetchpriority="high" data-reveal data-reveal-step="2">
               <div class="hero-card hero-card--appointment" data-reveal data-reveal-step="4"><div class="hero-card__inner"><span class="hero-card__icon"><svg class="icon" aria-hidden="true"><use href="/img/icons.svg#calendar-check"></use></svg></span><div><strong>Consulta confirmada</strong></div><span class="hero-card__check" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="/img/icons.svg#check"></use></svg></span></div></div>
               <div class="hero-card hero-card--calendar" data-reveal data-reveal-step="5"><div class="hero-card__inner"><span class="hero-card__icon"><svg class="icon" aria-hidden="true"><use href="/img/icons.svg#calendar"></use></svg></span><div><strong>Agenda organizada</strong></div></div></div>
               <div class="product-frame" data-reveal data-reveal-step="3">
@@ -62,7 +62,6 @@
                 </a>
               </div>
             </div>
-            <figcaption>Personagem fictício · Imagem ilustrativa<br>Telas e cartões com dados demonstrativos</figcaption>
           </figure>
         </div>
         <div class="container"><dl class="product-facts" aria-label="O que você pode conhecer" data-reveal-group><div data-reveal><dt>4</dt><dd>Telas para explorar</dd></div><div data-reveal data-reveal-step="1"><dt>6</dt><dd>Especialidades apresentadas</dd></div><div data-reveal data-reveal-step="2"><dt>Um só lugar</dt><dd>Agendas, avisos e preferências</dd></div></dl></div>
@@ -81,7 +80,7 @@
       <section class="section features" id="features" aria-labelledby="features-title">
         <div class="container">
           <div class="section-header" data-reveal><div><p class="overline">Funcionalidades</p><h2 id="features-title">Recursos para organizar a rotina da clínica.</h2></div><p>Explore as telas e veja onde cada informação faz parte do seu dia.</p></div>
-          <div class="feature-grid" data-reveal-group aria-describedby="features-context">
+          <div class="feature-grid" data-reveal-group>
             <article class="feature-card feature-card--calendar" data-reveal>
               <div class="feature-card__copy"><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="/img/icons.svg#calendar"></use></svg></span><p class="feature-card__eyebrow">O dia, à vista</p><h3>Uma agenda que dá contexto à rotina.</h3><p>Consulte o calendário e o resumo de consultas para acompanhar os compromissos da clínica.</p><a class="feature-link" href="#dashboard-panel" data-demo-target="dashboard-tab">Explorar visão geral <svg class="icon" aria-hidden="true"><use href="/img/icons.svg#arrow"></use></svg></a></div>
               <figure class="feature-card__visual"><img src="/img/calendar-detail.webp" alt="Recorte do calendário original do Focus Clínica, com datas e marcações de consultas." width="900" height="307" loading="lazy" decoding="async"></figure>
@@ -94,7 +93,6 @@
             <article class="feature-card feature-card--specialties" data-reveal data-reveal-step="3"><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="/img/icons.svg#layers"></use></svg></span><h3>Especialidades e profissionais.</h3><p>Consulte os cartões com as áreas e os profissionais apresentados.</p><a class="feature-link" href="#consultation-types-panel" data-demo-target="consultation-types-tab">Ver especialidades <svg class="icon" aria-hidden="true"><use href="/img/icons.svg#arrow"></use></svg></a></article>
             <article class="feature-card feature-card--settings" data-reveal data-reveal-step="4"><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="/img/icons.svg#settings"></use></svg></span><h3>Preferências no seu lugar.</h3><p>Perfil, dados da clínica e opções de segurança em um espaço dedicado.</p><a class="feature-link" href="#settings-panel" data-demo-target="settings-tab">Ver configurações <svg class="icon" aria-hidden="true"><use href="/img/icons.svg#arrow"></use></svg></a></article>
           </div>
-          <p class="feature-note" id="features-context">Prévias do sistema com dados demonstrativos.</p>
         </div>
       </section>
       <section class="section benefits" id="benefits" aria-labelledby="benefits-title">
@@ -110,12 +108,12 @@
       <section class="section demo" id="demo" aria-labelledby="demo-title">
         <div class="container">
           <div class="section-header" data-reveal><div><p class="overline">Por dentro do sistema</p><h2 id="demo-title">Conheça o Focus Clínica por dentro.</h2></div><p>Quatro telas reais para explorar os recursos e a organização da plataforma.</p></div>
-          <div class="demo-toolbar"><div class="tabs" role="tablist" aria-label="Telas do sistema" hidden>
+          <div class="tabs" role="tablist" aria-label="Telas do sistema" hidden>
             <button id="dashboard-tab" class="tab" role="tab" aria-selected="true" aria-controls="dashboard-panel" tabindex="0" type="button"><svg class="icon" aria-hidden="true"><use href="/img/icons.svg#window"></use></svg><span>Visão geral</span></button>
             <button id="appointments-tab" class="tab" role="tab" aria-selected="false" aria-controls="appointments-panel" tabindex="-1" type="button"><svg class="icon" aria-hidden="true"><use href="/img/icons.svg#calendar-check"></use></svg><span>Agendamentos</span></button>
             <button id="consultation-types-tab" class="tab" role="tab" aria-selected="false" aria-controls="consultation-types-panel" tabindex="-1" type="button"><svg class="icon" aria-hidden="true"><use href="/img/icons.svg#layers"></use></svg><span>Especialidades</span></button>
             <button id="settings-tab" class="tab" role="tab" aria-selected="false" aria-controls="settings-panel" tabindex="-1" type="button"><svg class="icon" aria-hidden="true"><use href="/img/icons.svg#settings"></use></svg><span>Configurações</span></button>
-          </div><p class="demo-disclaimer">Telas do sistema com dados demonstrativos</p></div>
+          </div>
           <div class="demo-showcase">
           <div class="demo-panel" id="dashboard-panel" role="tabpanel" aria-labelledby="dashboard-tab" tabindex="0">
             <div class="demo-panel__heading"><div><h3>Visão geral</h3><p>Uma visão do dia, com resumo de consultas, calendário e notificações.</p></div><ul class="demo-panel__focus" aria-label="Recursos desta tela"><li><svg class="icon" aria-hidden="true"><use href="/img/icons.svg#check"></use></svg>Calendário</li><li><svg class="icon" aria-hidden="true"><use href="/img/icons.svg#check"></use></svg>Consultas</li><li><svg class="icon" aria-hidden="true"><use href="/img/icons.svg#check"></use></svg>Notificações</li></ul></div>
@@ -141,7 +139,7 @@
         <div class="container faq__grid"><div data-reveal><h2 id="faq-title">Dúvidas frequentes</h2><p>Respostas para começar a explorar o Focus Clínica.</p></div><div class="faq__list">
           <details><summary>Para quem é o Focus Clínica?</summary><div class="faq__answer"><p>Para clínicas, gestores e profissionais da saúde que buscam organizar agendas, consultas e informações da rotina da clínica.</p></div></details>
           <details><summary>Quais recursos posso conhecer?</summary><div class="faq__answer"><p>Calendário, agendamentos e seus status, notificações, especialidades e profissionais apresentados, além de perfil, dados da clínica e preferências.</p></div></details>
-          <details><summary>O que aparece na demonstração?</summary><div class="faq__answer"><p>Capturas reais de quatro telas: visão geral, agendamentos, especialidades e configurações. Os dados são demonstrativos e as imagens podem ser ampliadas.</p></div></details>
+          <details><summary>O que aparece na demonstração?</summary><div class="faq__answer"><p>Capturas reais de quatro telas: visão geral, agendamentos, especialidades e configurações. As imagens podem ser ampliadas.</p></div></details>
           <details><summary>Como acessar o sistema?</summary><div class="faq__answer"><p>Use o botão “Acessar sistema” para abrir a plataforma Focus Clínica em uma nova aba.</p></div></details>
         </div></div>
       </section>

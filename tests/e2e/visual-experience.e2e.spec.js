@@ -19,7 +19,6 @@ for (const width of [360, 390, 768, 1440]) {
     expect(portrait.y + portrait.height).toBeLessThanOrEqual(composition.y + composition.height);
     expect(copy.y + copy.height <= portrait.y || copy.x + copy.width <= portrait.x).toBe(true);
     await expect(page.locator(".hero-card")).toHaveCount(2);
-    await expect(page.locator(".hero__visual figcaption")).toContainText("Personagem fictício");
     const frame = page.locator(".hero-stage .product-frame");
     await expect(frame).toBeVisible();
     await expect(frame.locator("img")).toHaveJSProperty("complete", true);
