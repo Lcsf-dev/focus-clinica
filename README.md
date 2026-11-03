@@ -2,6 +2,8 @@
 
 Landing page institucional para apresentar o Focus Clínica a clínicas, gestores e profissionais da saúde. Reúne informações sobre calendário, agendamentos, notificações e especialidades, com capturas reais e acesso à plataforma.
 
+![Prévia da landing page Focus Clínica, com médico fictício e telas demonstrativas](docs/evidence/readme-preview.png)
+
 ## Links
 
 - [GitHub Pages](https://lcsf-dev.github.io/landing-page-focus-clinica/)
