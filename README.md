@@ -6,9 +6,8 @@ Landing page institucional para apresentar o Focus Clínica a clínicas, gestore
 
 ## Links
 
-- [GitHub Pages](https://lcsf-dev.github.io/landing-page-focus-clinica/)
-- [Netlify](https://landing-page-focus-clinica-lcsf.netlify.app/)
-- [Repositório](https://github.com/Lcsf-dev/landing-page-focus-clinica)
+- [Landing page](https://focusclinica.netlify.app/)
+- [Repositório](https://github.com/Lcsf-dev/focus-clinica)
 - [Figma](https://www.figma.com/design/P7K5fBiCqhBsehhrR5BNqp/)
 - [Sistema de referência](https://focus-clinica.netlify.app/)
 

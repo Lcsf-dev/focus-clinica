@@ -1,6 +1,6 @@
 # Fluxo de Git e GitHub
 
-Repositório: <https://github.com/Lcsf-dev/landing-page-focus-clinica>.
+Repositório: <https://github.com/Lcsf-dev/focus-clinica>.
 
 ## Branches e integração
 
