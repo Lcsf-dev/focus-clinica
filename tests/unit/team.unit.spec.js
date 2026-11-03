@@ -255,7 +255,7 @@ describe("team view (DOM)", () => {
     view.showError();
 
     expect(document.querySelector("#team-message").textContent).toBe(
-      "Não foi possível atualizar os perfis. Os links da equipe continuam disponíveis.",
+      "Não foi possível atualizar os perfis. Os nomes e links continuam disponíveis.",
     );
     expect(view.retryButton.hidden).toBe(false);
   });
@@ -270,7 +270,7 @@ describe("team view (DOM)", () => {
     const status = document.querySelector("#team-status");
     expect(status.dataset.state).toBe("success");
     expect(document.querySelector("#team-message").textContent).toBe(
-      "Perfis atualizados pelo GitHub.",
+      "Perfis da equipe atualizados.",
     );
     expect(view.list.getAttribute("aria-busy")).toBe("false");
     expect(view.retryButton.disabled).toBe(false);

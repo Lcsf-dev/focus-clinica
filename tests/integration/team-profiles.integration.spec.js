@@ -100,7 +100,7 @@ describe("team profiles integration", () => {
       "success",
     );
     expect(document.querySelector("#team-message").textContent).toBe(
-      "Perfis atualizados pelo GitHub.",
+      "Perfis da equipe atualizados.",
     );
     expect(view.retryButton.hidden).toBe(true);
   });
