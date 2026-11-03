@@ -2,13 +2,17 @@
 
 ## Apresentação atual do produto
 
-A composição mantém a marca original e a paleta verde, petróleo, menta e branco. O hero apresenta a visão geral do sistema, o título “Mais organização. Mais foco no cuidado.” e os acessos à plataforma e à demonstração.
+O hero combina o título “Mais organização. Mais foco no cuidado.”, o médico inteiramente fictício, a captura real da visão geral e dois cartões de exemplos demonstrativos. O fundo menta, as formas suaves e a composição em camadas dão profundidade sem transformar textos e ações em uma imagem. A indicação de personagem ilustrativo acompanha a composição.
 
-As oito partes institucionais são preservadas, com perguntas frequentes antes da chamada final. Funcionalidades apontam para as quatro telas reais da galeria. Benefícios descrevem agendas, status, avisos, especialidades e preferências, sem métricas de resultados ou recursos adicionais.
+Uma faixa compacta mostra quatro telas e seis especialidades efetivamente presentes nas capturas. As funcionalidades usam uma grade assimétrica: calendário e agendamentos em destaque e blocos complementares de avisos, especialidades e configurações. Os recortes provêm das imagens originais, com indicação de dados demonstrativos.
 
-O cabeçalho usa uma linha com marca e menu em larguras de até 1050 px; o acesso ao sistema fica dentro da navegação. No celular, as quatro abas são organizadas em duas colunas e os recortes destacam regiões das capturas. A ampliação mostra o original completo e oferece tamanho natural para leitura dos detalhes.
+A galeria mantém quatro abas por clique e teclado. Cada painel reúne explicação, recursos destacados e uma prévia em recorte, com dimensões reservadas para manter a altura estável. A ampliação abre o PNG completo, oferece tamanho original, fecha por Escape e devolve o foco ao acionador.
 
-Títulos e ações são HTML selecionável. Bordas, sombras e estados de foco compartilham os mesmos tokens. A fonte Inter local e sua licença são mantidas. A origem das imagens está em [Recursos visuais](images.md).
+As entradas reutilizam o mecanismo de `IntersectionObserver`, com intervalos curtos entre os elementos. Os cartões sobrepostos fazem um único movimento de 3,4 segundos. Abas usam uma transição de 250 ms, sem carrossel automático. `prefers-reduced-motion` mostra os estados finais e desativa os movimentos. Sem JavaScript ou sem suporte ao observador, o conteúdo permanece visível; falhas ao configurar o observador também restauram a visibilidade.
+
+O cabeçalho compacto, as oito partes institucionais, a FAQ e os créditos integrados ao GitHub são preservados. No celular, a composição fica após os textos e botões, com médico e captura visíveis; a grade de funcionalidades vira uma sequência de blocos. Benefícios mantêm o fundo petróleo, a FAQ ocupa menos espaço e a chamada final reforça o acesso ao sistema.
+
+Logo, paleta e Inter local com licença são preservados. Os PNGs originais permanecem sem alterações. Origem e dimensões dos novos ativos estão em [Recursos visuais](images.md).
 
 ## Histórico do protótipo
 

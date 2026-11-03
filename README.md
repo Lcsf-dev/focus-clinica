@@ -16,7 +16,9 @@ Landing page institucional para apresentar o Focus Clínica a clínicas, gestore
 - Galeria de visão geral, agendamentos, especialidades e configurações, com capturas reais e dados demonstrativos.
 - Menu responsivo, navegação por âncoras, abas por clique/teclado e ampliação das capturas.
 - Perfis públicos da equipe no rodapé, com nomes e links estáticos preservados se a API falhar.
-- Layout responsivo, foco visível e tratamento de preferência por movimento reduzido.
+- Hero com personagem médico fictício, captura real e exemplos demonstrativos; funcionalidades em composição assimétrica.
+- Entradas coordenadas, microinterações e galeria com prévias em recorte e altura estável.
+- Layout responsivo, foco visível, estados finais para movimento reduzido e conteúdo disponível sem JavaScript.
 
 ## Executar localmente
 
@@ -72,7 +74,9 @@ O E2E inicia o preview e gera o build quando não há servidor disponível. Para
 
 As quatro capturas completas ficam em `public/img/`, com seus PNGs originais preservados. Em telas pequenas, recortes de 600 × 500 px destacam uma região; a ampliação sempre abre a captura completa. No diálogo, “Ver em tamanho original” permite ler os detalhes com rolagem horizontal e vertical, inclusive por teclado. Escape fecha a imagem e devolve o foco ao elemento de abertura.
 
-As abas aceitam setas, Home e End. Os cartões de funcionalidades abrem o painel correspondente. A navegação permanece disponível sem JavaScript, com todas as capturas apresentadas em sequência. Nessa situação, a ampliação usa o link direto para o PNG.
+As abas aceitam setas, Home e End. Os cartões de funcionalidades abrem o painel correspondente. O hero usa versões WebP transparentes do personagem ilustrativo. As animações de entrada executam uma vez ao aparecer e os cartões têm movimento de duração limitada. Os valores da faixa de apresentação correspondem às quatro telas e seis especialidades visíveis.
+
+A navegação permanece disponível sem JavaScript, com todas as capturas apresentadas em sequência. Nessa situação, a ampliação usa o link direto para o PNG.
 
 ## Publicação
 
