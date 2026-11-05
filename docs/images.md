@@ -1,4 +1,6 @@
-# Recursos visuais
+# 🖼️ Recursos visuais
+
+[← Voltar ao README](../README.md)
 
 Os arquivos ficam em `public/img/` e são publicados em `/img/...` pelo Vite.
 

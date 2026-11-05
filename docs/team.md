@@ -1,8 +1,10 @@
-# Equipe e frentes de trabalho
+# 👥 Equipe e frentes de trabalho
+
+[← Voltar ao README](../README.md)
 
 As frentes abaixo indicam responsabilidades. Os [resultados técnicos](testing.md) são separados da conferência posterior dos colegas; tarefas atribuídas não comprovam execução, autoria ou aprovação.
 
-## Distribuição das frentes
+## 👥 Distribuição das frentes
 
 | Integrante | GitHub | Frente | Entregas da frente |
 | --- | --- | --- | --- |
@@ -13,7 +15,7 @@ As frentes abaixo indicam responsabilidades. Os [resultados técnicos](testing.m
 
 As frentes cobrem design, HTML/CSS, JavaScript e API/testes. Cada tarefa informa responsáveis e critérios de conclusão; os registros de execução identificam quem realizou a atividade.
 
-## API e testes de integração
+## 🔌 API e testes de integração
 
 Gabriel Enzo coordena a validação da API e dos resultados integrados. O roteiro é:
 
@@ -26,13 +28,13 @@ Gabriel Enzo coordena a validação da API e dos resultados integrados. O roteir
 7. Registrar resultado real, ambiente, evidência e problema encontrado.
 8. Abrir Issues e, se acordado, corrigir problemas em branches próprias.
 
-## Acesso ao GitHub
+## 🔒 Acesso ao GitHub
 
 O repositório é público desde 20/10/2026. Qualquer pessoa pode consultar e clonar o código; enviar alterações diretamente exige acesso de colaborador.
 
 **Revisão visual do Figma: Thamires — aprovado em 20/10/2026.** Testes locais adicionais são registrados separadamente por quem os executar.
 
-## Fluxo entre as frentes
+## 👥 Fluxo entre as frentes
 
 - Desenvolvimento prepara o Figma e as implementações por tarefa.
 - Revisão visual confere o protótipo e a apresentação da interface.
@@ -41,7 +43,7 @@ O repositório é público desde 20/10/2026. Qualquer pessoa pode consultar e cl
 
 Todos verificam suas entregas antes de pedir revisão. Os papéis descrevem responsabilidades planejadas; resultados, aprovações e autoria são registrados à medida que as atividades acontecem.
 
-## Responsabilidades de todos
+## 👥 Responsabilidades de todos
 
 - Definir requisitos e informar impedimentos.
 - Manter tarefas atualizadas.

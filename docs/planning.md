@@ -1,6 +1,10 @@
-# Planejamento
+# 🗓️ Planejamento
 
-## Situação operacional — 29/10/2026
+[← Voltar ao README](../README.md)
+
+> 📌 Este documento reúne planejamento e registros datados. Para executar a versão atual, consulte o [README](../README.md); para acessar o site, use <https://focusclinica.netlify.app/>. As Issues do GitHub são o quadro operacional da equipe.
+
+## 🕰️ Situação registrada — 29/10/2026
 
 Prazo de entrega: **14/11/2026**. Organização: **Issues do GitHub**, no fluxo A fazer → Em andamento → Em revisão → Concluído. Comunicação da equipe: **WhatsApp**.
 
@@ -14,16 +18,16 @@ Prazo de entrega: **14/11/2026**. Organização: **Issues do GitHub**, no fluxo 
 
 `develop` concentra integração e `main` produção. As decisões técnicas atuais e propostas superadas estão em [Refatoração](refactoring.md); o fluxo de contribuição está em [Git](git-workflow.md).
 
-## Próximas atividades
+## 🗓️ Próximas atividades
 
 - Conciliar a referência visual final entre site e Figma.
 - Conferir zoom real de 200% e movimento reduzido no navegador; a lógica de movimento reduzido já possui testes controlados.
 - Registrar a conferência efetivamente realizada por cada integrante, com versão, ambiente e resultado.
 - Corrigir problemas confirmados, repetir apenas os cenários afetados e atualizar as Issues correspondentes.
 
-As frentes e atribuições permanecem em [Equipe](team.md). Os prazos individuais de conferência ainda precisam ser combinados antes da entrega. Capturas internas adicionais são opcionais e exigem revisão de privacidade; a página atual usa as telas públicas de apresentação e acesso.
+As frentes e atribuições permanecem em [Equipe](team.md). Os prazos individuais de conferência ainda precisam ser combinados antes da entrega. A página atual usa quatro capturas internas com dados demonstrativos; origem e recursos preservados estão em [Recursos visuais](images.md).
 
-## Decisões históricas
+## 🕰️ Decisões históricas
 
 | Data | Decisão |
 | --- | --- |
