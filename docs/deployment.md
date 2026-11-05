@@ -1,12 +1,20 @@
-# CI/CD e publicação
+# 🌐 CI/CD e publicação
 
-## Produção
+[← Voltar ao README](../README.md)
 
-A publicação principal é <https://focusclinica.netlify.app/>. O Netlify acompanha `main`, executa `npm run build` e publica `dist/`, conforme `netlify.toml`. A URL canônica, os metadados Open Graph e Twitter e a imagem social usam esse endereço.
+## 🌐 Produção
+
+**Site atual:** <https://focusclinica.netlify.app/>.
+
+> 🕰️ O endereço `https://lcsf-dev.github.io/focus-clinica/` disponibiliza uma versão antiga. Use o Netlify para acessar a página atual.
+
+O Netlify acompanha `main`, executa `npm run build` e publica `dist/`, conforme `netlify.toml`. A URL canônica, os metadados Open Graph e Twitter e a imagem social usam o endereço atual.
 
 O sistema em <https://focus-clinica.netlify.app/> é uma aplicação externa. A landing page apenas oferece seu link de acesso.
 
-## GitHub Actions
+No repositório [Lcsf-dev/focus-clinica](https://github.com/Lcsf-dev/focus-clinica), o campo **About → Website** deve apontar para `https://focusclinica.netlify.app/`.
+
+## 🔄 GitHub Actions
 
 O workflow `.github/workflows/ci.yml` valida PRs e pushes em `develop` e `main`, com Node.js 22 e ações fixadas por commit:
 
@@ -18,15 +26,17 @@ O workflow `.github/workflows/ci.yml` valida PRs e pushes em `develop` e `main`,
 
 O workflow atual não publica no GitHub Pages; seu endereço anterior e seus registros permanecem no histórico. A publicação no Netlify é automática após a integração em `main`. A conferência de uma entrega deve comparar o SHA de `main` com o commit do deploy publicado no Netlify, além de verificar brevemente a página pública.
 
-## Integração e pacote público
+## 🌐 Integração e pacote público
 
 Branch da tarefa criada a partir de `origin/develop` → PR para `develop` → checks → merge → PR para `main` → checks → merge. Não enviar diretamente às branches principais, reescrever histórico ou contornar proteções.
 
 O Vite gera o HTML, CSS e JavaScript de produção e copia as imagens de `public/`. Documentação, testes, credenciais e arquivos temporários ficam fora do pacote. `netlify.toml` preserva a CSP, X-Content-Type-Options, Referrer-Policy e X-Frame-Options. A CSP permite a API pública do GitHub e os avatares no domínio esperado.
 
-## Histórico de publicação
+## 🕰️ Histórico de publicação
 
-Endereço anterior do GitHub Pages: <https://lcsf-dev.github.io/landing-page-focus-clinica/>. Os registros datados abaixo preservam os endereços usados nas respectivas publicações.
+O GitHub Pages foi usado anteriormente em `https://lcsf-dev.github.io/landing-page-focus-clinica/` e, após a mudança do nome do repositório, em `https://lcsf-dev.github.io/focus-clinica/`. Esses endereços são históricos; a publicação atual fica no Netlify.
+
+Os registros datados abaixo preservam os endereços usados nas respectivas publicações.
 
 | Data | Versão | Registro |
 | --- | --- | --- |

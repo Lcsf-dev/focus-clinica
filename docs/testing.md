@@ -1,6 +1,10 @@
-# Testes e verificações
+# 🧪 Testes e verificações
 
-## Composição com personagem e produto — 03/11/2026
+[← Voltar ao README](../README.md)
+
+> 📌 Para escolher o comando de teste, consulte a seção **Suíte atual (Vitest + Playwright)**. Os registros com data descrevem verificações anteriores e seus limites; não significam uma nova execução na versão atual.
+
+## 🧪 Composição com personagem e produto — 03/11/2026
 
 Ambiente local: Windows, Node.js 24.16.0 e Chromium do Playwright. Build Vite e 20 testes do pacote aprovados. As verificações E2E locais foram direcionadas aos comportamentos afetados; a suíte completa permanece no CI, em Chromium e Firefox.
 
@@ -15,7 +19,7 @@ Evidências: [desktop](evidence/experience-desktop.png), [celular](evidence/expe
 Limites: inspeção das capturas renderizadas no navegador, sem dispositivos físicos, leitor de tela ou medição quantitativa de desempenho. Mensagens de CSP do selo automático do Netlify são distintas dos erros da aplicação na conferência de produção.
 
 
-## Apresentação do produto — 03/11/2026
+## 🧪 Apresentação do produto — 03/11/2026
 
 Ambiente local: Windows, Node.js 24.16.0 e Chromium do Playwright. O build usa Vite e as verificações do pacote usam Vitest. A suíte completa em Chromium e Firefox, incluindo testes da integração GitHub com respostas controladas, permanece obrigatória no workflow `CI`.
 
@@ -29,7 +33,7 @@ Evidências: [hero no computador](evidence/showcase-desktop.png), [hero no celul
 
 As verificações são de navegador automatizado e inspeção das capturas, sem dispositivos físicos, leitor de tela ou avaliação quantitativa de desempenho. O resultado do CI deve ser consultado na PR correspondente.
 
-## Suíte atual (Vitest + Playwright)
+## 🧪 Suíte atual (Vitest + Playwright)
 
 Os testes automatizados estão divididos em projetos do Vitest e em E2E com Playwright.
 
@@ -44,11 +48,11 @@ Os testes automatizados estão divididos em projetos do Vitest e em E2E com Play
 | `npm run test:e2e:chromium` | E2E apenas em Chromium |
 | `npm run test:e2e:firefox` | E2E apenas em Firefox |
 
-Os módulos de interface (`menu`, `demo-tabs`, `image-viewer`, `reveal-animations` e `main`) são cobertos por E2E e excluídos da cobertura do Vitest. Os specs ficam em `tests/e2e/*.e2e.spec.js` e usam `build + preview` para validar o artefato de produção. A execução no CI será configurada separadamente.
+Os módulos de interface (`menu`, `demo-tabs`, `image-viewer`, `reveal-animations` e `main`) são cobertos por E2E e excluídos da cobertura do Vitest. Os specs ficam em `tests/e2e/*.e2e.spec.js` e usam `build + preview` para validar o artefato de produção. O workflow `.github/workflows/ci.yml` já executa testes unitários, integração, build e E2E em Chromium e Firefox.
 
-A tabela da seção "Suíte automatizada" abaixo registra a suíte anterior em `node:test` e é histórica.
+A tabela da seção **Suíte anterior (node:test) — 29/10/2026** registra a suíte histórica.
 
-## Ajustes visuais — 30/10/2026
+## 🧪 Ajustes visuais — 30/10/2026
 
 Verificações locais na branch `fix/figma-visual-alignment`, com Windows, Chrome, Node.js 24.16.0 e npm 11.13.0:
 
@@ -61,13 +65,13 @@ Verificações locais na branch `fix/figma-visual-alignment`, com Windows, Chrom
 
 As rotinas de HTTP, falha parcial, nova tentativa e concorrência não foram alteradas; seus testes automatizados existentes foram preservados. Não houve nova simulação dessas falhas no navegador. A comparação foi visual, sem medição pixel a pixel, dispositivos físicos ou nova auditoria completa de acessibilidade.
 
-## Referência validada — 29/10/2026
+## 📝 Referência validada — 29/10/2026
 
 Versão publicada: `8b8ba58`, integrada pelos PRs [#28](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/28) e [#29](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/29). O [workflow de produção](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/runs/40945562687) concluiu com 26 testes aprovados, zero falhas e Node.js 22.23.4. O build foi executado pelo `pretest`.
 
 As verificações locais de 29/10/2026 usaram Windows, Chrome, Node.js 24.16.0 e npm 11.13.0. Os resultados abaixo não representam testes executados pelos demais integrantes nem aprovação final de acessibilidade ou design.
 
-## Suíte automatizada
+## 🕰️ Suíte anterior (node:test) — 29/10/2026
 
 ```powershell
 npm test
@@ -83,7 +87,7 @@ npm test
 
 Os testes usam respostas controladas e não consomem a cota pública do GitHub. `npm run build` também foi executado separadamente em 29/10/2026 e concluiu com sucesso.
 
-## Verificações no Chrome — 29/10/2026
+## 🧪 Verificações no Chrome — 29/10/2026
 
 | ID | Cenário | Resultado registrado |
 | --- | --- | --- |
@@ -99,11 +103,11 @@ Os testes usam respostas controladas e não consomem a cota pública do GitHub. 
 
 As falhas foram provocadas com respostas controladas, sem depender de indisponibilidade do serviço público. O roteiro de consulta manual está em [Insomnia](insomnia.md); não há execução manual registrada nessa ferramenta.
 
-## Verificações estruturais registradas
+## 🧪 Verificações estruturais registradas
 
 Na finalização de 29/10/2026, 46 links locais Markdown resolveram, 16 arquivos JavaScript passaram em `node --check` e `git diff --check` passou. O HTML apresentou um `h1`, sem salto de nível nos títulos, landmarks `header/main/footer`, seis seções no `main`, atributo `alt` nas seis imagens e `rel` seguro nos links em nova aba. Esses números descrevem aquela versão, não a quantidade atual de referências documentais.
 
-## Limitações e conferência posterior
+## 📌 Limitações da verificação de 29/10/2026
 
 - CT07: zoom real de 200% não foi comprovado.
 - CT08: a lógica de movimento reduzido passou com respostas controladas e as regras CSS foram inspecionadas; a preferência real não foi emulada no navegador.
@@ -113,7 +117,7 @@ Na finalização de 29/10/2026, 46 links locais Markdown resolveram, 16 arquivos
 
 Registrar somente cenários efetivamente executados e aprovações comprovadas.
 
-## Histórico de verificações
+## 🕰️ Histórico de verificações
 
 | Data | Versão/etapa | Resultado e evidência |
 | --- | --- | --- |
@@ -126,7 +130,7 @@ Registrar somente cenários efetivamente executados e aprovações comprovadas.
 
 As [prévias desktop](evidence/preview-desktop.jpg) e [celular](evidence/preview-mobile.jpg) anteriores à substituição da API são registros históricos de interface; não comprovam a integração atual ou aderência ao Figma.
 
-## Como registrar um novo resultado
+## 🧪 Como registrar um novo resultado
 
 Informar data, responsável pela execução, branch/commit, navegador/viewport, passos, resultado, evidência e Issue relacionada quando houver falha. Após corrigir um problema, repetir o cenário afetado.
 
