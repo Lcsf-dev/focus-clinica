@@ -1,17 +1,19 @@
-# Focus Clínica — Landing Page
+# 🏥 Focus Clínica — Landing Page
 
 Landing page institucional para apresentar o Focus Clínica a clínicas, gestores e profissionais da saúde. Reúne informações sobre calendário, agendamentos, notificações e especialidades, com capturas reais e acesso à plataforma.
 
 ![Prévia da landing page Focus Clínica, com médico fictício e telas demonstrativas](docs/evidence/readme-preview.png)
 
-## Links
+## 🔗 Links
 
-- [Landing page](https://focusclinica.netlify.app/)
-- [Repositório](https://github.com/Lcsf-dev/focus-clinica)
-- [Figma](https://www.figma.com/design/P7K5fBiCqhBsehhrR5BNqp/)
-- [Sistema de referência](https://focus-clinica.netlify.app/)
+- 🌐 [Site atual — Netlify](https://focusclinica.netlify.app/)
+- 💻 [Repositório](https://github.com/Lcsf-dev/focus-clinica)
+- 🎨 [Figma](https://www.figma.com/design/P7K5fBiCqhBsehhrR5BNqp/)
+- 🏥 [Sistema de referência](https://focus-clinica.netlify.app/)
 
-## Funcionalidades
+> 🕰️ O GitHub Pages em `https://lcsf-dev.github.io/focus-clinica/` mantém uma versão antiga. Para acessar a página atual, use o link **Site atual — Netlify** acima.
+
+## ✨ Funcionalidades
 
 - Cabeçalho, hero, sobre, funcionalidades, benefícios, demonstração, chamada para ação e rodapé, com perguntas frequentes antes da chamada final.
 - Galeria de visão geral, agendamentos, especialidades e configurações, com capturas reais e dados demonstrativos.
@@ -21,9 +23,13 @@ Landing page institucional para apresentar o Focus Clínica a clínicas, gestore
 - Entradas coordenadas, microinterações e galeria com prévias em recorte e altura estável.
 - Layout responsivo, foco visível, estados finais para movimento reduzido e conteúdo disponível sem JavaScript.
 
-## Executar localmente
+## 🚀 Executar localmente
 
-Pré-requisitos: Node.js 22 atualizado (ou superior) e npm. A aplicação usa HTML, CSS e JavaScript com Vite para desenvolvimento e build, Vitest para testes unitários e de integração e Playwright para testes no navegador.
+**Pré-requisitos:** Node.js 22 atualizado (ou superior) e npm.
+
+A aplicação usa HTML, CSS e JavaScript. O Vite cuida do desenvolvimento e do build; o Vitest executa testes unitários e de integração; o Playwright executa testes no navegador.
+
+No terminal, dentro da pasta do projeto:
 
 ```powershell
 npm ci
@@ -44,7 +50,7 @@ Abra o endereço informado pelo Vite, normalmente <http://localhost:5173>. Encer
 
 O E2E inicia o preview e gera o build quando não há servidor disponível. Para evitar builds duplicados na conferência local, reutilize um preview já iniciado após `npm run test:build`. No CI, preserve a sequência obrigatória do workflow.
 
-## Estrutura
+## 📁 Estrutura
 
 ```text
 .
@@ -71,7 +77,7 @@ O E2E inicia o preview e gera o build quando não há servidor disponível. Para
 
 `dist/` é gerado e ignorado pelo Git. Nomes técnicos usam inglês; interface e documentação da equipe usam português. Convenções e decisões estão em [Refatoração](docs/refactoring.md).
 
-## Demonstração e acessibilidade
+## ♿ Demonstração e acessibilidade
 
 As quatro capturas completas ficam em `public/img/`, com seus PNGs originais preservados. Em telas pequenas, recortes de 600 × 500 px destacam uma região; a ampliação sempre abre a captura completa. No diálogo, “Ver em tamanho original” permite ler os detalhes com rolagem horizontal e vertical, inclusive por teclado. Escape fecha a imagem e devolve o foco ao elemento de abertura.
 
@@ -79,17 +85,21 @@ As abas aceitam setas, Home e End. Os cartões de funcionalidades abrem o painel
 
 A navegação permanece disponível sem JavaScript, com todas as capturas apresentadas em sequência. Nessa situação, a ampliação usa o link direto para o PNG.
 
-## Publicação
+## 🌐 Publicação
 
-O Netlify publica `dist/` a partir de `main`, usando `npm run build`. A integração segue branch da tarefa → PR para `develop` → checks → merge → PR para `main` → checks → merge. A URL canônica e a imagem social apontam para a publicação principal no Netlify. Consulte [CI/CD e publicação](docs/deployment.md).
+**Endereço atual:** <https://focusclinica.netlify.app/>.
 
-## Integração com o GitHub
+O Netlify publica `dist/` a partir de `main`, usando `npm run build`. A URL canônica e a imagem social apontam para esse endereço.
+
+O fluxo de integração é: branch da tarefa → PR para `develop` → checks → merge → PR para `main` → checks → merge. Consulte [CI/CD e publicação](docs/deployment.md).
+
+## 🔌 Integração com o GitHub
 
 O rodapé consulta `GET https://api.github.com/users/{username}` para atualizar nome público, avatar e link dos quatro integrantes. As consultas começam perto do rodapé, não utilizam token e não envolvem dados clínicos. Falhas mantêm os créditos estáticos; a nova tentativa consulta somente perfis pendentes e bloqueia carregamentos simultâneos.
 
 Veja o [contrato e tratamento de falhas](docs/api.md), o [roteiro do Insomnia](docs/insomnia.md) e a [descrição OpenAPI](docs/api.openapi.json).
 
-## Equipe
+## 👥 Equipe
 
 | Integrante | Frente |
 | --- | --- |
@@ -100,9 +110,14 @@ Veja o [contrato e tratamento de falhas](docs/api.md), o [roteiro do Insomnia](d
 
 As frentes indicam responsabilidades; registros de execução e aprovação são separados. Detalhes em [Equipe](docs/team.md).
 
-## Documentação técnica
+## 📚 Documentação técnica
 
-- [Requisitos e escopo](docs/requirements.md), [planejamento](docs/planning.md) e [tarefas](docs/tasks.md).
-- [Design e diferenças para o Figma](docs/design.md); [origem dos recursos visuais](docs/images.md).
-- [Testes e limitações conhecidas](docs/testing.md).
-- [Fluxo Git](docs/git-workflow.md), [CI/CD e publicação](docs/deployment.md) e [histórico de alterações](docs/changelog.md).
+| Assunto | Onde consultar |
+| --- | --- |
+| 📋 Escopo e organização | [Requisitos](docs/requirements.md), [planejamento](docs/planning.md) e [tarefas](docs/tasks.md) |
+| 🎨 Interface e imagens | [Design e diferenças para o Figma](docs/design.md) e [recursos visuais](docs/images.md) |
+| 🔌 Integração | [API do GitHub](docs/api.md), [roteiro do Insomnia](docs/insomnia.md) e [contrato OpenAPI](docs/api.openapi.json) |
+| 🧪 Qualidade | [Testes e limitações conhecidas](docs/testing.md) |
+| 🛠️ Ferramentas e manutenção | [Decisões técnicas](docs/technical_decisions.md) e [refatoração](docs/refactoring.md) |
+| 🌐 Contribuição e publicação | [Fluxo Git](docs/git-workflow.md) e [CI/CD e publicação](docs/deployment.md) |
+| 👥 Equipe e histórico | [Responsabilidades](docs/team.md) e [histórico de alterações](docs/changelog.md) |

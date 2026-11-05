@@ -1,14 +1,18 @@
-# Quadro de tarefas
+# ✅ Quadro de tarefas
 
-## Estado técnico — 29/10/2026
+[← Voltar ao README](../README.md)
+
+> 📌 Acompanhe o trabalho atual nas [Issues do GitHub](https://github.com/Lcsf-dev/focus-clinica/issues). Os quadros abaixo preservam registros das datas indicadas.
+
+## 🕰️ Estado técnico registrado — 29/10/2026
 
 As oito partes da landing page, interações e integração GitHub estão implementadas. A finalização passou com 26 testes, build e verificações de navegador, foi integrada pelos PRs #28/#29 e está publicada em `8b8ba58`. Resultados e limites estão em [Testes](testing.md); produção em [Publicação](deployment.md).
 
 As Issues do GitHub são o quadro operacional. A conferência posterior dos colegas deve registrar resultados reais; a integração técnica não concede aprovação humana nem altera automaticamente os estados históricos abaixo.
 
-## Quadro histórico — 20/10/2026
+## 🕰️ Quadro histórico — 20/10/2026
 
-Registro de 20/10/2026. Entrega informada: **14/11/2026**. Fluxo: **A fazer → Em andamento → Em revisão → Concluído**. Usar Issues do GitHub como quadro operacional. Os números de testes abaixo são históricos; a suíte atual possui 26. Prazos individuais de revisão ainda não acordados; status Em revisão não significa aprovação.
+Registro de 20/10/2026. Entrega informada: **14/11/2026**. Fluxo: **A fazer → Em andamento → Em revisão → Concluído**. Usar Issues do GitHub como quadro operacional. Os números de testes abaixo são históricos; a finalização de 29/10/2026 registrou 26 testes. A suíte atual está descrita em [Testes](testing.md). Prazos individuais de revisão ainda não acordados; status Em revisão não significa aprovação.
 
 | Tarefa / Issue | Frente | Estado | Evidência e critério restante |
 | --- | --- | --- | --- |

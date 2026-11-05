@@ -1,6 +1,8 @@
-# Design — Focus Clínica
+# 🎨 Design — Focus Clínica
 
-## Apresentação atual do produto
+[← Voltar ao README](../README.md)
+
+## 🎨 Apresentação atual do produto
 
 O hero combina o título “Mais organização. Mais foco no cuidado.”, o médico inteiramente fictício, a captura real da visão geral e dois cartões de exemplos demonstrativos. O fundo menta, as formas suaves e a composição em camadas dão profundidade sem transformar textos e ações em uma imagem. A indicação de personagem ilustrativo acompanha a composição.
 
@@ -14,7 +16,7 @@ O cabeçalho compacto, as oito partes institucionais, a FAQ e os créditos integ
 
 Logo, paleta e Inter local com licença são preservados. Os PNGs originais permanecem sem alterações. Origem e dimensões dos novos ativos estão em [Recursos visuais](images.md).
 
-## Histórico do protótipo
+## 🕰️ Histórico do protótipo
 
 Os registros abaixo descrevem as versões anteriores e suas revisões específicas.
 
@@ -22,7 +24,7 @@ Os registros abaixo descrevem as versões anteriores e suas revisões específic
 
 Responsável pelo design: Lucas Fernandes (`Lcsf-dev`). A aprovação visual registrada é específica do protótipo de 20/10/2026 e distinta da validação da implementação.
 
-## Conferência de 30/10/2026
+## 🧪 Conferência de 30/10/2026
 
 As oito partes da página foram comparadas com os layouts de 1440, 768 e 390 px da página “02 — Layouts e protótipo”. A paleta, a tipografia e os botões foram conferidos na página “03 — Estilos e revisão”. O protótipo permite rolagem vertical além do recorte inicial do quadro desktop. A [evidência da identidade](evidence/figma-original-logo.png) registra a versão anterior.
 
@@ -30,7 +32,7 @@ A implementação usa captura reta no hero, marca em uma linha, seção Sobre cl
 
 Permanecem adaptações funcionais: cabeçalho fixo durante a rolagem, diálogo acessível de ampliação, indicadores de foco e estados da API. Nomes e avatares podem variar conforme os perfis públicos do GitHub; a mensagem de estado acrescenta altura ao rodapé. Os ícones são vetores locais e a quebra de linhas varia com a área útil do navegador. A comparação visual não constitui uma medição pixel a pixel nem altera a aprovação histórica do protótipo. Cenários verificados e limitações estão em [Testes](testing.md).
 
-## Arquivo e apresentação
+## 🔗 Arquivo e apresentação
 
 - [Arquivo editável no Figma Design](https://www.figma.com/design/P7K5fBiCqhBsehhrR5BNqp/).
 - [Protótipo — computador](https://www.figma.com/proto/P7K5fBiCqhBsehhrR5BNqp/?node-id=2-12730&starting-point-node-id=2%3A12730&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1).
@@ -41,7 +43,7 @@ Permanecem adaptações funcionais: cabeçalho fixo durante a rolagem, diálogo 
 | 02 — Layouts e protótipo | Três layouts com Auto Layout, textos editáveis, capturas reais e fluxos de apresentação |
 | 03 — Estilos e revisão | Paleta, tipografia, componentes reutilizáveis, estados e registro visual |
 
-## Telas e navegação
+## 🎨 Telas e navegação
 
 Cada layout contempla cabeçalho, hero, sobre, funcionalidades, benefícios, demonstração, chamada para ação e rodapé. Existem estados separados para acesso do cliente e captura ampliada.
 
@@ -49,7 +51,7 @@ Foram configurados três fluxos com rolagem vertical. No computador, o menu nave
 
 O protótipo apresenta o visual e os fluxos principais. A execução de fetch, a navegação completa por teclado e a responsividade efetiva são verificadas na implementação HTML/CSS/JavaScript, não deduzidas das telas do Figma.
 
-## Identidade e recursos
+## 🎨 Identidade e recursos
 
 | Recurso | Definição |
 | --- | --- |
@@ -66,7 +68,7 @@ Os créditos contemplam os quatro perfis públicos da equipe, com estados de car
 
 Em 20/10/2026, o logo original da referência foi aplicado aos cabeçalhos e rodapés dos três layouts do Figma e ao site. A Inter foi incluída localmente a partir do [repositório oficial](https://github.com/rsms/inter), com sua licença em css/fonts/LICENSE-Inter.txt. [Evidência do Figma atualizado](evidence/figma-original-logo.png).
 
-## Registro da revisão
+## 📝 Registro da revisão
 
 | Campo | Registro |
 | --- | --- |

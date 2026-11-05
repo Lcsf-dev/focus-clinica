@@ -1,12 +1,14 @@
-# API REST do GitHub — créditos da equipe
+# 🔌 API REST do GitHub — créditos da equipe
+
+[← Voltar ao README](../README.md)
 
 O projeto consome a **API REST do GitHub**, um serviço existente com documentação pública.
 
-## Finalidade
+## 🎯 Finalidade
 
 A integração enriquece a identificação do projeto no rodapé com nomes públicos, avatares e links dos quatro integrantes. Ela não consulta pacientes, não agenda consultas e não fornece as funcionalidades clínicas. Essas funcionalidades são conteúdo estático da landing page.
 
-## Documentação e contrato
+## 🔗 Documentação e contrato
 
 | Campo | Valor |
 | --- | --- |
@@ -20,15 +22,15 @@ A integração enriquece a identificação do projeto no rodapé com nomes públ
 | Autenticação | Nenhuma para esses perfis públicos; sem token no frontend |
 | Limite não autenticado | 60 requisições por hora por IP; compartilhado com outros acessos do mesmo IP |
 | CORS | A API REST admite consultas entre origens; verificar também no endereço publicado |
-| Cliente | `js/github/github-client.js`, função `fetchGithubProfile()` |
-| Validação e normalização | `js/github/github-profile.js`, contrato JSDoc `GithubProfile` |
+| Cliente | `js/api/github.js`, função `fetchGithubProfile()` |
+| Normalização | `utils/normalizeGithubProfile.js`, função `normalizeGithubProfile()` |
 | Controle da equipe | `js/team/team-profiles.js`, carregamento sob demanda e novas tentativas |
 | Interface | `js/team/team-view.js`, créditos em `#team-list` |
 | Revisão e testes adicionais | Gabriel Enzo (`genzo-dev`) |
 
 Referências: [limites](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api) e [CORS](https://docs.github.com/en/rest/using-the-rest-api/using-cors-and-jsonp-to-make-cross-origin-requests).
 
-## Fluxo no site
+## 🔌 Fluxo no site
 
 1. Os quatro nomes e links já existem no HTML, inclusive sem JavaScript ou com API indisponível.
 2. Ao chegar próximo ao rodapé, a página consulta cada perfil uma vez, em paralelo.
@@ -38,13 +40,15 @@ Referências: [limites](https://docs.github.com/en/rest/using-the-rest-api/rate-
 
 Não há lista vazia neste endpoint: ele retorna um objeto por perfil; um objeto ausente ou inválido é tratado como falha. Não criar um teste de array vazio sem relação com esse contrato.
 
-## Segurança e publicação
+## 🔒 Segurança e publicação
 
 Conteúdo textual é inserido com `textContent`. Links e avatares retornados são limitados aos domínios esperados. A política CSP em `netlify.toml` permite consultas a `api.github.com` e imagens de `avatars.githubusercontent.com`. Não adicionar tokens para contornar o limite.
 
 O site é estático e consulta diretamente a API REST do GitHub pelo navegador.
 
-## Decisões da refatoração — 29/10/2026
+## 🕰️ Decisões da refatoração — 29/10/2026
+
+> 🕰️ Registro histórico da implementação de 29/10/2026. Para localizar os módulos atuais, consulte a tabela de documentação e contrato acima; este registro não comprova a presença de todas as validações na versão atual.
 
 O contrato externo preserva `login`, `name`, `html_url` e `avatar_url`. Depois da validação em tempo de execução, o contrato interno `GithubProfile` expõe `username`, `name`, `profileUrl` e `avatarUrl`. O JSDoc descreve os contratos; não substitui as verificações.
 
@@ -56,14 +60,16 @@ A URL do perfil exige origem `https://github.com` e caminho correspondente ao us
 
 `Promise.allSettled` preserva os resultados bem-sucedidos. A marca `data-loaded` só é aplicada após apresentar um perfil válido; novas tentativas selecionam apenas cartões pendentes. `isLoading` bloqueia chamadas concorrentes e é liberado em `finally`. A renderização usa `textContent`; falhas da API mantêm nomes e links estáticos e falhas do avatar mantêm as iniciais.
 
-## Testes e Insomnia
+## 🧪 Testes e Insomnia
 
 O comando `npm test` verifica o cliente com respostas controladas, sem consumir a cota pública. A execução real no navegador e a revisão de Gabriel são registros separados em [testing.md](testing.md).
 
 O [arquivo OpenAPI](api.openapi.json) descreve o endpoint público para importação no Insomnia. Veja o [roteiro de consulta](insomnia.md); resultados da suíte e do navegador estão em [Testes](testing.md).
 
-## Histórico da integração
+## 🕰️ Histórico da integração
 
 Em 20/10/2026, `13081b8` substituiu a API própria de funcionalidades pela integração pública do GitHub e removeu `dados/funcionalidades.mjs` e `netlify/functions/funcionalidades.mjs`. Os diretórios locais vazios remanescentes foram removidos em 29/10/2026.
 
-O servidor `scripts/dev-server.mjs` serve arquivos estáticos para desenvolvimento; não é um backend de negócio. Cliente GitHub, testes, OpenAPI e roteiro do Insomnia pertencem à integração atual e são preservados. Não há banco de dados, autenticação própria ou dependências de backend na implementação atual. A inspeção de 29/10/2026 não encontrou credenciais privadas na árvore de aplicação/documentação; não foi uma varredura integral de segredos do histórico Git.
+O antigo servidor `scripts/dev-server.mjs` servia arquivos estáticos e foi substituído pelo Vite. Cliente GitHub, testes, OpenAPI e roteiro do Insomnia pertencem à integração atual e são preservados. Não há banco de dados, autenticação própria ou dependências de backend na implementação atual.
+
+A inspeção de 29/10/2026 não encontrou credenciais privadas na árvore de aplicação/documentação; não foi uma varredura integral de segredos do histórico Git.

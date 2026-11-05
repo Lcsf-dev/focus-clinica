@@ -1,10 +1,12 @@
-# Requisitos e critérios de conclusão
+# 📋 Requisitos e critérios de conclusão
 
-## Objetivo
+[← Voltar ao README](../README.md)
+
+## 🎯 Objetivo
 
 Apresentar profissionalmente o Focus Clínica, um sistema de gestão clínica, destacar suas funcionalidades e incentivar clínicas, gestores e profissionais da saúde a conhecer ou acessar a plataforma.
 
-## Seções obrigatórias
+## 📋 Seções obrigatórias
 
 | ID | Seção | Conteúdo / conclusão |
 | --- | --- | --- |
@@ -17,7 +19,7 @@ Apresentar profissionalmente o Focus Clínica, um sistema de gestão clínica, d
 | RF07 | Chamada para ação | Convite para conhecer ou acessar a plataforma |
 | RF08 | Rodapé | Identificação do projeto e links relevantes |
 
-## Design e qualidade
+## ♿ Design e qualidade
 
 - RD01: identidade visual do Focus Clínica, com verde, azul-petróleo e branco.
 - RD02: tipografia moderna e legível; apresentação minimalista, elegante e profissional.
@@ -29,7 +31,7 @@ Apresentar profissionalmente o Focus Clínica, um sistema de gestão clínica, d
 - RQ04: menu responsivo, rolagem suave, animações discretas e efeitos nos botões.
 - RQ05: considerar preferência por movimento reduzido nos efeitos e na rolagem.
 
-## API
+## 🔌 API
 
 - RA01: escolher API, registrar documentação, endpoints, formato de resposta e finalidade.
 - RA02: consultar com `fetch()` e apresentar os dados definidos pela equipe.
@@ -39,7 +41,7 @@ Apresentar profissionalmente o Focus Clínica, um sistema de gestão clínica, d
 
 A integração consulta perfis públicos do GitHub e apresenta nome, avatar e link da equipe no rodapé. Contrato e documentação oficial em [api.md](api.md). As funcionalidades da Focus são conteúdo estático da landing page.
 
-## Processo e entrega
+## 🗓️ Processo e entrega
 
 - RP01: quadro A fazer → Em andamento → Em revisão → Concluído.
 - RP02: uma branch por tarefa, commits claros, Pull Requests e revisão antes da integração.
@@ -48,7 +50,7 @@ A integração consulta perfis públicos do GitHub e apresenta nome, avatar e li
 - RP05: verificar links, navegação, responsividade, animações e API.
 - RP06: publicar, registrar plataforma/endereço/data e testar o endereço final.
 
-## Limites do escopo
+## 📌 Limites do escopo
 
 A entrega é a landing page institucional. Não foram solicitados módulos completos de gestão clínica, autenticação, banco de pacientes, processamento de pagamentos ou agendamento real dentro desta página.
 

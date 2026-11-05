@@ -1,8 +1,10 @@
-# Testar a API existente no Insomnia
+# 🧪 Testar a API existente no Insomnia
+
+[← Voltar ao README](../README.md)
 
 O serviço testado é a **API REST do GitHub**, não uma API criada pela equipe. Não é necessário iniciar o servidor local para consultar o GitHub no Insomnia.
 
-## Importar e consultar
+## 🧪 Importar e consultar
 
 1. No Insomnia, use a opção de importar arquivo e selecione `docs/api.openapi.json`.
 2. Abra a requisição GET de perfil público, com servidor `https://api.github.com`.
@@ -15,7 +17,7 @@ Documentação oficial: <https://docs.github.com/en/rest/users/users#get-a-user>
 
 O arquivo OpenAPI descreve a requisição do endpoint público usado pela landing page.
 
-## Verificações necessárias
+## 🧪 Verificações necessárias
 
 | Verificação | Onde | Resultado esperado |
 | --- | --- | --- |
@@ -28,6 +30,6 @@ O arquivo OpenAPI descreve a requisição do endpoint público usado pela landin
 
 Não esgotar a cota do GitHub para provocar 403/429: esses estados são simulados em `npm test`. O Insomnia verifica o endpoint; ele não comprova comportamento visual, acessibilidade ou CORS no navegador.
 
-## Registro
+## 📝 Registro
 
 Gabriel Enzo (`genzo-dev`) revisa a integração e registra os testes adicionais em [testing.md](testing.md). A presença deste roteiro **não significa que o teste manual no Insomnia foi executado**.

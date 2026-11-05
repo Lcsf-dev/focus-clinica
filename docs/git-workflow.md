@@ -1,8 +1,10 @@
-# Fluxo de Git e GitHub
+# 🌿 Fluxo de Git e GitHub
+
+[← Voltar ao README](../README.md)
 
 Repositório: <https://github.com/Lcsf-dev/focus-clinica>.
 
-## Branches e integração
+## 🔄 Branches e integração
 
 **Issue → branch da tarefa → commits → PR para develop → checks → integração → PR para main → checks → publicação.**
 
@@ -12,7 +14,7 @@ Repositório: <https://github.com/Lcsf-dev/focus-clinica>.
 - Commits usam títulos objetivos em inglês, como `docs: streamline project documentation`.
 - Preservar histórico, autoria e trabalhos existentes; não usar force push ou alterar proteções para integrar.
 
-## Rotina de uma tarefa
+## 🗓️ Rotina de uma tarefa
 
 1. Atualizar referências e conferir a base, as alterações locais e o escopo da Issue.
 2. Criar uma branch da tarefa a partir de `develop`.
@@ -25,7 +27,7 @@ Repositório: <https://github.com/Lcsf-dev/focus-clinica>.
 
 Mudanças documentais exigem links locais, whitespace e revisão do diff, sem repetir testes funcionais localmente. O CI obrigatório continua sendo executado. Regras de deploy e permissões estão em [Publicação](deployment.md).
 
-## Histórico relevante
+## 🕰️ Histórico relevante
 
 `develop` foi adotada para integração em 20/10/2026. Os PRs #10, #14, #15 e #16 integraram planejamento, estrutura, interações e API; #17 levou a implementação para `main`. O PR #11 foi encerrado como substituído. A configuração de publicação entrou por #18 e #19.
 
